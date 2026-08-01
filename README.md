@@ -6,6 +6,28 @@ The Comment module adds authenticated comments, reactions, reporting, and
 moderation to published HTML Editor documents. It reuses the Editor and
 Workspace access rules instead of creating a second, competing ACL system.
 
+## Dependencies
+
+Required, in enable order:
+
+1. `aaieduhr/heartphrame-framework` (`dev-main`)
+2. `aaieduhr/heartphrame-module-orm` (`dev-main`)
+3. `aaieduhr/heartphrame-module-auth` (`dev-main`)
+4. `aaieduhr/heartphrame-module-notification` (`dev-main`)
+5. `aaieduhr/heartphrame-module-editor-html` (`dev-main`)
+6. `aaieduhr/heartphrame-module-comment` (`dev-main`)
+
+Optional integrations:
+
+- Workspace supplies inherited read/publish permissions.
+- Theme supplies configured light and dark visual tokens.
+
+```bash
+composer require aaieduhr/heartphrame-module-comment:dev-main
+vendor/bin/hph comment:install-migration
+vendor/bin/hph orm-migrate:up
+```
+
 ## Features
 
 - Comments on published documents for authenticated users who can read them.
@@ -45,7 +67,7 @@ copy and run its single initial migration:
 
 ```bash
 vendor/bin/hph comment:install-migration
-vendor/bin/hph orm-migrate up
+vendor/bin/hph orm-migrate:up
 ```
 
 The package contains no users, documents, comments, or test seed data.

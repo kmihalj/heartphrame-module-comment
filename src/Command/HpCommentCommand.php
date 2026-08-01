@@ -86,7 +86,7 @@ final readonly class HpCommentCommand
         }
 
         echo __('Kreirana je početna Comment migracija: ') . $target . PHP_EOL;
-        echo __('Sljedeći korak: pokreni `vendor/bin/hph orm-migrate up`.') . PHP_EOL;
+        echo __('Sljedeći korak: pokreni `vendor/bin/hph orm-migrate:up`.') . PHP_EOL;
 
         return 0;
     }

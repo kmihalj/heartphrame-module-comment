@@ -6,6 +6,28 @@ Comment modul dodaje komentare prijavljenih korisnika, reakcije, prijave i
 moderiranje na objavljene dokumente HTML Editora. Ponovno koristi prava
 Editora i Workspacea umjesto uvođenja drugog, konkurentskog ACL sustava.
 
+## Ovisnosti
+
+Obavezno, redoslijedom uključivanja:
+
+1. `aaieduhr/heartphrame-framework` (`dev-main`)
+2. `aaieduhr/heartphrame-module-orm` (`dev-main`)
+3. `aaieduhr/heartphrame-module-auth` (`dev-main`)
+4. `aaieduhr/heartphrame-module-notification` (`dev-main`)
+5. `aaieduhr/heartphrame-module-editor-html` (`dev-main`)
+6. `aaieduhr/heartphrame-module-comment` (`dev-main`)
+
+Opcionalne integracije:
+
+- Workspace daje naslijeđena prava čitanja i objavljivanja.
+- Theme daje podešene tokene svijetle i tamne teme.
+
+```bash
+composer require aaieduhr/heartphrame-module-comment:dev-main
+vendor/bin/hph comment:install-migration
+vendor/bin/hph orm-migrate:up
+```
+
 ## Mogućnosti
 
 - Komentiranje objavljenih dokumenata korisnicima koji ih smiju čitati.
@@ -45,7 +67,7 @@ i pokreni njegovu jedinu početnu migraciju:
 
 ```bash
 vendor/bin/hph comment:install-migration
-vendor/bin/hph orm-migrate up
+vendor/bin/hph orm-migrate:up
 ```
 
 Paket ne sadrži korisnike, dokumente, komentare ni testne seed podatke.

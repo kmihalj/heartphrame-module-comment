@@ -40,8 +40,8 @@ return [
     'Radnju s komentarom nije moguće spremiti.' =>
         'Radnju s komentarom nije moguće spremiti.',
     'Reakcija komentara nije valjana.' => 'Reakcija komentara nije valjana.',
-    'Sljedeći korak: pokreni `vendor/bin/hph orm-migrate up`.' =>
-        'Sljedeći korak: pokreni `vendor/bin/hph orm-migrate up`.',
+    'Sljedeći korak: pokreni `vendor/bin/hph orm-migrate:up`.' =>
+        'Sljedeći korak: pokreni `vendor/bin/hph orm-migrate:up`.',
     'Spremljeni komentar nije moguće učitati.' =>
         'Spremljeni komentar nije moguće učitati.',
     'Stranice komentara' => 'Stranice komentara',

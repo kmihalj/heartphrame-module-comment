@@ -40,8 +40,8 @@ return [
     'Radnju s komentarom nije moguće spremiti.' =>
         'The comment action could not be saved.',
     'Reakcija komentara nije valjana.' => 'The comment reaction is invalid.',
-    'Sljedeći korak: pokreni `vendor/bin/hph orm-migrate up`.' =>
-        'Next step: run `vendor/bin/hph orm-migrate up`.',
+    'Sljedeći korak: pokreni `vendor/bin/hph orm-migrate:up`.' =>
+        'Next step: run `vendor/bin/hph orm-migrate:up`.',
     'Spremljeni komentar nije moguće učitati.' =>
         'The saved comment could not be loaded.',
     'Stranice komentara' => 'Comment pages',
