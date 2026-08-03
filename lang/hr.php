@@ -52,4 +52,5 @@ return [
         'Za dodavanje komentara potrebna je prijava.',
     'Za ovu radnju potrebna je prijava.' => 'Za ovu radnju potrebna je prijava.',
     'Zatvori' => 'Zatvori',
+    'Nepoznata Comment podnaredba: ' => 'Nepoznata Comment podnaredba: ',
 ];

@@ -52,4 +52,5 @@ return [
         'You must sign in to add a comment.',
     'Za ovu radnju potrebna je prijava.' => 'You must sign in for this action.',
     'Zatvori' => 'Close',
+    'Nepoznata Comment podnaredba: ' => 'Unknown Comment subcommand: ',
 ];
