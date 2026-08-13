@@ -89,6 +89,7 @@ document and language while HTML versions change.
 
 - [English guide](docs/index_en.md)
 - [Hrvatske upute](docs/index_hr.md)
+- [Backup and restore](docs/backup_en.md)
 
 ## Quality Checks
 

@@ -89,6 +89,7 @@ HTML verzije mijenjaju.
 
 - [Hrvatske upute](docs/index_hr.md)
 - [English guide](docs/index_en.md)
+- [Sigurnosna kopija i povrat](docs/backup_hr.md)
 
 ## Provjere kvalitete
 

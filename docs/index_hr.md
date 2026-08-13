@@ -94,3 +94,8 @@ composer on-commit
 Pri promjeni sheme tijekom razvoja izravno ažuriraj
 `resources/migrations/initial_comment_schema.php` i ponovno kreiraj testnu bazu.
 Za ovaj modul prije objave ne dodaj migracije kompatibilnosti.
+
+## 9. Backup i povrat
+
+Vidi [sigurnosnu kopiju i povrat](backup_hr.md) za potpune i na područje
+ograničene postavke komentara, reakcije i prijave.

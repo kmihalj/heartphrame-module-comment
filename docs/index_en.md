@@ -97,3 +97,8 @@ composer on-commit
 When changing the schema during development, update
 `resources/migrations/initial_comment_schema.php` directly and recreate the
 test database. Do not add compatibility migrations for this pre-release module.
+
+## 9. Backup and restore
+
+See [Backup and restore](backup_en.md) for complete and workspace-scoped comment
+settings, reactions, and reports.

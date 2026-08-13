@@ -44,6 +44,7 @@
         "squizlabs/php_codesniffer": "^3"
     },
     "suggest": {
+        "aaieduhr/heartphrame-module-backup": "Adds backup and restore for comments, reactions, reports, and settings.",
         "aaieduhr/heartphrame-module-theme": "Provides configured light and dark visual tokens.",
         "aaieduhr/heartphrame-module-workspace": "Applies inherited Workspace read and publish permissions to comments."
     },
