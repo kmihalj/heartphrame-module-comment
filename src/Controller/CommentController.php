@@ -12,6 +12,7 @@ use HeartPhrame\Http\ResponseFactory;
 use HeartPhrame\Session\SessionInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Log\LoggerInterface;
 use RuntimeException;
 use Throwable;
 
@@ -36,6 +37,7 @@ final readonly class CommentController
         private CommentSettingsService $settings,
         private CommentService $comments,
         private CommentReportService $reports,
+        private ?LoggerInterface $technicalLogger = null,
     ) {
     }
 
@@ -217,6 +219,13 @@ final readonly class CommentController
      */
     private function failure(Throwable $throwable): ResponseInterface
     {
+        // HR: Sadržaj komentara i razlog prijave namjerno se ne šalju u tehnički log.
+        // EN: Comment content and report reasons are intentionally omitted from the technical log.
+        $this->technicalLogger?->warning('Comment operation failed.', [
+            'module' => 'comment',
+            'exception' => $throwable,
+        ]);
+
         return $this->responseFactory->json([
             'ok' => false,
             'error' => $throwable->getMessage(),

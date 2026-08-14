@@ -87,6 +87,10 @@ if (class_exists(\AaiEduHr\HeartPhrameModuleBackup\Service\DatabaseTableBackupPr
                     [\AaiEduHr\HeartPhrameModuleBackup\Value\BackupScope::SITE, \AaiEduHr\HeartPhrameModuleBackup\Value\BackupScope::COMPONENT],
                     true,
                     true,
+                    componentGroups: [
+                        \AaiEduHr\HeartPhrameModuleBackup\Value\BackupComponentGroup::WORKSPACES,
+                        \AaiEduHr\HeartPhrameModuleBackup\Value\BackupComponentGroup::DOCUMENTS,
+                    ],
                 ),
                 [
                     ['dataset' => 'settings', 'table' => \AaiEduHr\HeartPhrameModuleComment\ModuleComment::TABLE_SETTINGS, 'primary_key' => 'id', 'conflict_keys' => ['document_id', 'language_code'], 'preserve_primary_key' => false, 'foreign_keys' => [
