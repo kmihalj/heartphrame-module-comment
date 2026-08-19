@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace AaiEduHr\HeartPhrameModuleComment\Tests;
 
+use AaiEduHr\HeartPhrameModuleComment\Event\CommentChanged;
 use AaiEduHr\HeartPhrameModuleComment\ModuleComment;
 use AaiEduHr\HeartPhrameModuleComment\Service\CommentService;
 use AaiEduHr\HeartPhrameModuleOrm\Database\Database;
@@ -11,9 +12,11 @@ use AaiEduHr\HeartPhrameModuleOrm\Database\Migration\ReversibleMigrationInterfac
 use HeartPhrame\Config\Config;
 use HeartPhrame\Helper\Helper;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(CommentService::class)]
+#[UsesClass(CommentChanged::class)]
 final class CommentServiceTest extends TestCase
 {
     private Database $database;

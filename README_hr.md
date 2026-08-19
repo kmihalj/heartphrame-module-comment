@@ -85,6 +85,11 @@ instaliran.
 Komentari nisu verzije dokumenta. Ostaju vezani uz dokument i jezik dok se
 HTML verzije mijenjaju.
 
+Servis nakon uspješnog stvaranja ili brisanja objavljuje neutralni događaj
+`CommentChanged`. Opcionalni aplikacijski moduli poput
+`aaieduhr/simbioza-module-user` mogu obavijestiti pratitelje bez ovisnosti
+Comment modula o aplikacijskom kodu i bez tijela komentara u događaju.
+
 ## Dokumentacija
 
 - [Hrvatske upute](docs/index_hr.md)

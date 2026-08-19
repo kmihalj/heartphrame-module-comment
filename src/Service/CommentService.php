@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace AaiEduHr\HeartPhrameModuleComment\Service;
 
+use AaiEduHr\HeartPhrameModuleComment\Event\CommentChanged;
 use AaiEduHr\HeartPhrameModuleComment\ModuleComment;
 use AaiEduHr\HeartPhrameModuleOrm\Database\Database;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use RuntimeException;
 
 use function array_values;
@@ -37,8 +39,10 @@ final readonly class CommentService
      * HR: Prima ORM bazu podataka.
      * EN: Receives the ORM database.
      */
-    public function __construct(private Database $database)
-    {
+    public function __construct(
+        private Database $database,
+        private ?EventDispatcherInterface $events = null,
+    ) {
     }
 
     /**
@@ -186,6 +190,14 @@ final readonly class CommentService
             throw new RuntimeException(__('Spremljeni komentar nije moguće učitati.'));
         }
 
+        $this->dispatch(new CommentChanged(
+            'created',
+            $this->stringValue($row['uuid'] ?? ''),
+            $documentId,
+            $language,
+            $userId,
+        ));
+
         return $this->normalizeComment($row, $canDelete);
     }
 
@@ -299,6 +311,27 @@ final readonly class CommentService
                 'deleted_at' => $now,
                 'updated_at' => $now,
             ]);
+
+        $this->dispatch(new CommentChanged(
+            'deleted',
+            $commentUuid,
+            $this->stringValue($comment['document_id'] ?? ''),
+            $this->stringValue($comment['language_code'] ?? ''),
+            $deletedByUserId,
+        ));
+    }
+
+    /** HR: Sigurno objavljuje opcionalni domenski događaj. EN: Safely dispatches an optional domain event. */
+    private function dispatch(CommentChanged $event): void
+    {
+        try {
+            $this->events?->dispatch($event);
+        } catch (\Throwable) {
+            /*
+             * HR: Sekundarna integracija ne smije poništiti komentar.
+             * EN: A secondary integration must not roll back a comment.
+             */
+        }
     }
 
     /**

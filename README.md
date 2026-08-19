@@ -85,6 +85,11 @@ installed.
 Comments themselves are not document versions. They remain attached to the
 document and language while HTML versions change.
 
+The service publishes a neutral `CommentChanged` event after a successful
+create or delete operation. Optional application modules such as
+`aaieduhr/simbioza-module-user` may notify followers without making Comment
+depend on application-specific code or exposing comment bodies in the event.
+
 ## Documentation
 
 - [English guide](docs/index_en.md)

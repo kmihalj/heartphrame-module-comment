@@ -102,3 +102,10 @@ test database. Do not add compatibility migrations for this pre-release module.
 
 See [Backup and restore](backup_en.md) for complete and workspace-scoped comment
 settings, reactions, and reports.
+
+## 10. Personal following event
+
+Successful create/delete operations emit immutable `CommentChanged` events.
+They contain identifiers and language, never the comment body. Simbioza User
+may translate a creation into a follower notification without introducing an
+application dependency into Comment.

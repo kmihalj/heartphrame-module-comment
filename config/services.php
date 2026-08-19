@@ -27,7 +27,10 @@ $services = [
         new CommentSettingsService($container->get(Database::class)),
 
     CommentService::class => static fn(ContainerInterface $container): CommentService =>
-        new CommentService($container->get(Database::class)),
+        new CommentService(
+            $container->get(Database::class),
+            $container->get(\Psr\EventDispatcher\EventDispatcherInterface::class),
+        ),
 
     CommentDocumentAccess::class => static fn(ContainerInterface $container): CommentDocumentAccess =>
         new CommentDocumentAccess(

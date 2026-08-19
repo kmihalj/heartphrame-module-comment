@@ -99,3 +99,10 @@ Za ovaj modul prije objave ne dodaj migracije kompatibilnosti.
 
 Vidi [sigurnosnu kopiju i povrat](backup_hr.md) za potpune i na područje
 ograničene postavke komentara, reakcije i prijave.
+
+## 10. Događaj osobnog praćenja
+
+Uspješno stvaranje ili brisanje objavljuje nepromjenjivi `CommentChanged`.
+Događaj sadrži identifikatore i jezik, ali nikada tijelo komentara. Simbioza
+User može stvaranje pretvoriti u obavijest pratiteljima bez aplikacijske
+ovisnosti u Comment modulu.
